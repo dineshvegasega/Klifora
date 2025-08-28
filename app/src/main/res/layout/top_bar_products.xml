@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/_15sdp">
+
+
+
+    <include
+        android:id="@+id/include_back_button"
+        layout="@layout/include_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ivSearch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        style="@style/PrimaryEditText"
+        android:hint="@string/type_here_to_search"
+        android:drawableEnd="@drawable/search"
+        android:drawableTint="@color/app_color"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:imeOptions="actionSearch"
+        android:inputType="text|textNoSuggestions"
+        android:maxLines="1"
+        android:lines="1"
+        android:singleLine="true"
+        android:ellipsize="end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/include_back_button"
+        app:layout_constraintEnd_toStartOf="@+id/ivCartLayout"
+        app:rippleColor="@color/white"
+        android:layout_marginTop="0dp"
+        android:focusable="false"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ivCartLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCart"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/cart"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:rippleColor="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menu_badge"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:background="@drawable/bg_all_round_orders"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:text="0"
+            android:gravity="center"
+            android:fontFamily="@font/nunitosans_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:textSize="@dimen/_8sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

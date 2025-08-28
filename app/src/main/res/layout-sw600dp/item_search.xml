@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        android:background="@color/_79747E"
+        app:rippleColor="@color/_868686"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="@dimen/_7sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:theme="@style/RoundCorner5"
+                    app:layout_constraintDimensionRatio="H,1:1.1"
+                    app:srcCompat="@drawable/place_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_7sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layoutLeft"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textColor="@color/_2A3740"
+                    android:textSize="@dimen/_8sdp"
+                    app:fontFamily="@font/nunitosans_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Color:"
+                    android:textColor="@color/_484848"
+                    android:textSize="@dimen/_7sdp"
+                    android:maxLines="2"
+                    app:fontFamily="@font/nunitosans_bold"
+                    tools:ignore="HardcodedText"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_1sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textPurity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Purity:"
+                    android:textColor="@color/_484848"
+                    android:textSize="@dimen/_7sdp"
+                    android:maxLines="2"
+                    android:visibility="gone"
+                    app:fontFamily="@font/nunitosans_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_1sdp"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textRingsize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ring size:"
+                    android:textColor="@color/_484848"
+                    android:textSize="@dimen/_7sdp"
+                    android:maxLines="2"
+                    android:visibility="gone"
+                    app:fontFamily="@font/nunitosans_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textPurity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_1sdp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price:₹12000 x 3 = ₹36,000"
+                    android:textColor="@color/_484848"
+                    android:textSize="@dimen/_7sdp"
+                    android:maxLines="2"
+                    app:fontFamily="@font/nunitosans_bold"
+                    tools:ignore="HardcodedText"
+                    app:layout_constraintTop_toBottomOf="@+id/textRingsize"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="@dimen/_1sdp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
+
+

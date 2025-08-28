@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_4sdp"
+        android:layout_margin="@dimen/_4sdp"
+        app:cardUseCompatPadding="true"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_5sdp"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/place_image"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:focusable="true"
+                android:clickable="true"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivIcon"
+                tools:ignore="HardcodedText" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="₹ 0"
+                android:textColor="@color/_000000"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:maxLines="2"
+                app:layout_constraintEnd_toStartOf="@id/textPriceDiscount"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                tools:ignore="HardcodedText" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPriceDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/strike__through_text"
+                android:textColor="@color/_000000"
+                android:textSize="@dimen/_10sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="2"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                tools:ignore="HardcodedText"
+                android:visibility="gone"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAddCart"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                app:layout_constraintDimensionRatio="H,1:1.1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textPrice"
+                app:srcCompat="@drawable/cart_outline"
+                app:tint="@color/_9A9A9A"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:visibility="gone"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btAddCart"
+                style="@style/PrimaryButtonBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_22sdp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/buy_now"
+                app:iconTint="@color/black"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPrice"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:cornerRadius="@dimen/_4sdp"
+                android:textSize="@dimen/_10sdp"
+                app:strokeColor="@color/app_color"
+                android:layout_marginHorizontal="@dimen/_7sdp"
+                android:visibility="gone"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
+
+
+

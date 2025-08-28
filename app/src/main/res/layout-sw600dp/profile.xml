@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/top_bar_others"
+        layout="@layout/top_bar_others"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:text="@string/profile"
+        android:textColor="@color/_2A3740"
+        android:textSize="@dimen/_12sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_others"
+        tools:ignore="HardcodedText" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:text="@string/logout"
+        android:textColor="@color/app_color"
+        android:textSize="@dimen/_9sdp"
+        android:padding="@dimen/_3sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_others"
+        tools:ignore="HardcodedText" />
+
+
+    <!--    <androidx.fragment.app.FragmentContainerView-->
+    <!--        android:id="@+id/map"-->
+    <!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textTitle"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/layout6"-->
+    <!--     />-->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btProfileDetails"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/profile_details"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btOrders"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/orders"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btProfileDetails"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btComplaints"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:drawablePadding="@dimen/_10sdp"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/complaints_feedback"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btOrders"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btChangePassword"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/change_password"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btComplaints"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchNotifications"
+        style="@style/PrimaryEditTextSwitch"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:focusable="false"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:paddingHorizontal="0dp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:switchPadding="@dimen/_20sdp"
+        android:text="@string/notifications"
+        android:textColor="@color/_1E1E1E"
+        android:letterSpacing="0.06"
+        android:textSize="@dimen/_9sdp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btChangePassword"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btSearchNearFranchise"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/search_for_your_nearest_franchise"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchNotifications"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btSearchOrder"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/search_your_order"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSearchNearFranchise"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btPrivacyPolicy"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSearchOrder"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btTermsConditions"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_28sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/nunitosans_semibold"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="start|center_vertical"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_7sdp"
+        android:text="@string/terms_conditions"
+        android:textColor="@color/_1E1E1E"
+        android:textSize="@dimen/_9sdp"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/_8sdp"
+        app:icon="@drawable/arrow_right"
+        app:iconGravity="end"
+        app:iconPadding="@dimen/_15sdp"
+        app:iconTint="@color/app_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSearchNearFranchise"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/app_color" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textAppVersionTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version_1_0"
+        android:textColor="@color/_003E4D"
+        android:textSize="@dimen/_10sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@+id/btTermsConditions"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@color/_FFF3E4"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textAppNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/_322F35"
+            android:textSize="@dimen/_18sdp"
+            app:fontFamily="@font/nunitosans_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textAppVersionTxt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version 1.8.2004"
+            android:textColor="@color/_322F35"
+            android:textSize="@dimen/_12sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAppNameTxt"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_vendor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btProfileDetails,btOrders, btComplaints, btChangePassword" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btSearchNearFranchise,btSearchOrder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_bar"
+    app:startDestination="@id/splash"
+    >
+    <fragment
+        android:name="com.klifora.shop.abc.AbcdFragment"
+        android:label="AbcdFragment"
+        android:id="@+id/abcd"
+        tools:layout="@layout/abc">
+        <action
+            android:id="@+id/action_abc_to_productList"
+            app:destination="@id/productList"
+            app:launchSingleTop="true"
+           />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.productList.ProductList"
+        android:label="ProductList"
+        android:id="@+id/productList"
+        tools:layout="@layout/products">
+        <action
+            android:id="@+id/action_products_to_filter"
+            app:destination="@id/filters"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.splash.Splash"
+        android:label="Splash"
+        android:id="@+id/splash"
+        tools:layout="@layout/splash">
+
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splash_to_loginOptions"
+            app:destination="@id/loginOptions"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.onBoarding.loginOptions.LoginOptions"
+        android:label="LoginOptions"
+        android:id="@+id/loginOptions"
+        tools:layout="@layout/login_options">
+
+
+        <action
+            android:id="@+id/action_loginOptions_to_login"
+            app:destination="@id/login"
+            app:launchSingleTop="true"
+        />
+
+        <action
+            android:id="@+id/action_loginOptions_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginOptions"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.onBoarding.login.Login"
+        android:label="Login"
+        android:id="@+id/login"
+        tools:layout="@layout/login">
+
+        <action
+            android:id="@+id/action_login_to_forgotPassword"
+            app:destination="@id/forgotPassword"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+
+
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.onBoarding.forgotPassword.ForgotPassword"
+        android:label="ForgotPassword"
+        android:id="@+id/forgotPassword"
+        tools:layout="@layout/forgot_password">
+        <action
+            android:id="@+id/action_forgotPassword_to_resetPassword"
+            app:destination="@id/resetPassword"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.onBoarding.resetPassword.ResetPassword"
+        android:label="ResetPassword"
+        android:id="@+id/resetPassword"
+        tools:layout="@layout/reset_password">
+        <action
+            android:id="@+id/action_resetPassword_to_login"
+            app:destination="@id/login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.home.Home"
+        android:label="Home"
+        android:id="@+id/home"
+        tools:layout="@layout/home">
+
+        <action
+            android:id="@+id/action_home_to_aboutUs"
+            app:destination="@id/aboutUs"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_home_to_products"
+            app:destination="@id/products"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_home_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_home_to_customDesign"
+            app:destination="@id/customDesign"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_home_to_webPage"
+            app:destination="@id/webPage"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.aboutUs.AboutUs"
+        android:label="AboutUs"
+        android:id="@+id/aboutUs"
+        tools:layout="@layout/about_us">
+        <action
+            android:id="@+id/action_aboutUs_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.aboutLabGrownDiamond.AboutLabGrownDiamond"
+        android:label="AboutLabGrownDiamond"
+        android:id="@+id/aboutLabGrownDiamond"
+        tools:layout="@layout/about_lab_grown_diamond">
+        <action
+            android:id="@+id/action_aboutLabGrownDiamond_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true" />
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.category.Category"
+        android:label="Category"
+        android:id="@+id/category"
+        tools:layout="@layout/category">
+
+        <action
+            android:id="@+id/action_category_to_products"
+            app:destination="@id/products"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_category_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_category_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_category_to_customDesign"
+            app:destination="@id/customDesign"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.faq.Faq"
+        android:label="Faq"
+        android:id="@+id/faq"
+        tools:layout="@layout/faq">
+
+        <action
+            android:id="@+id/action_faq_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_faq_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.profile.Profile"
+        android:label="Profile"
+        android:id="@+id/profile"
+        tools:layout="@layout/profile">
+
+        <action
+            android:id="@+id/action_profile_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_profileDetails"
+            app:destination="@id/profileDetail"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_trackOrder"
+            app:destination="@id/orders"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_complaintFeedback"
+            app:destination="@id/history"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_ChangePassword"
+            app:destination="@id/changePassword"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_login"
+            app:destination="@id/login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_profile_to_loginOptions"
+            app:destination="@id/loginOptions"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_profile_to_nearestFranchise"
+            app:destination="@id/nearestFranchise"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profile_to_searchOrder"
+            app:destination="@id/searchOrder"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.profileDetail.ProfileDetail"
+        android:label="ProfileDetail"
+        android:id="@+id/profileDetail"
+        tools:layout="@layout/product_detail">
+        <action
+            android:id="@+id/action_profileDetail_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_profileDetail_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.orders.Orders"
+        android:label="Orders"
+        android:id="@+id/orders"
+        tools:layout="@layout/orders">
+        <action
+            android:id="@+id/action_orders_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_orders_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_orders_to_orderDetail"
+            app:destination="@id/orderDetail"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:name="com.klifora.shop.ui.main.complaintFeedback.ComplaintFeedback"-->
+<!--        android:label="ComplaintFeedback"-->
+<!--        android:id="@+id/complaintFeedback"-->
+<!--        tools:layout="@layout/complaint_feedback">-->
+<!--        <action-->
+<!--            android:id="@+id/action_complaintFeedback_to_search"-->
+<!--            app:destination="@id/search"-->
+<!--            app:launchSingleTop="true"-->
+<!--            />-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_complaintFeedback_to_cart"-->
+<!--            app:destination="@id/cart"-->
+<!--            app:launchSingleTop="true"-->
+<!--            />-->
+<!--    </fragment>-->
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.changePassword.ChangePassword"
+        android:label="ChangePassword"
+        android:id="@+id/changePassword"
+        tools:layout="@layout/change_password">
+        <action
+            android:id="@+id/action_changePassword_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_changePassword_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_changePassword_to_login"
+            app:destination="@id/login"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.search.Search"
+        android:label="Search"
+        android:id="@+id/search"
+        tools:layout="@layout/search">
+
+        <action
+            android:id="@+id/action_search_to_productDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_search_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.cart.Cart"
+        android:label="Cart"
+        android:id="@+id/cart"
+        tools:layout="@layout/cart">
+        <action
+            android:id="@+id/action_cart_to_checkout"
+            app:destination="@id/checkout"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_cart_to_productDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.checkout.Checkout"
+        android:label="Checkout"
+        android:id="@+id/checkout"
+        tools:layout="@layout/checkout">
+        <action
+            android:id="@+id/action_checkout_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_checkout_to_productDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_checkout_to_selectFranchise"
+            app:destination="@id/selectFranchise"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_checkout_to_payment"
+            app:destination="@id/payment"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_checkout_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_checkout_to_cart2"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/checkout"
+            app:popUpToInclusive="false"
+            />
+
+        <action
+            android:id="@+id/action_checkout_to_thankyou"
+            app:destination="@id/thankyou"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.products.Products"
+        android:label="Products"
+        android:id="@+id/products"
+        tools:layout="@layout/products">
+        <action
+            android:id="@+id/action_products_to_productsDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_products_to_filter"
+            app:destination="@id/filters"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_products_to_search"
+            app:destination="@id/search"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_products_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.productDetail.ProductDetail"
+        android:label="ProductDetail"
+        android:id="@+id/productDetail"
+        tools:layout="@layout/product_detail">
+
+        <action
+            android:id="@+id/action_productDetail_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_productDetail_to_productDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="false"
+            />
+
+        <action
+            android:id="@+id/action_productDetail_to_productZoom"
+            app:destination="@id/productZoom"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.filters.Filters"
+        android:label="Filters"
+        android:id="@+id/filters"
+        tools:layout="@layout/filters">
+
+        <action
+            android:id="@+id/action_filters_to_products"
+            app:destination="@id/products"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/filters"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_filters_to__productList"
+            app:destination="@id/productList"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/filters"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:name="com.klifora.shop.ui.main.filters.Filters"-->
+<!--        android:label="Filters"-->
+<!--        android:id="@+id/filters"-->
+<!--        tools:layout="@layout/filters">-->
+<!--        <action-->
+<!--            android:id="@+id/action_filters_to_products"-->
+<!--            app:destination="@id/products"-->
+<!--            app:launchSingleTop="true"-->
+<!--            app:popUpTo="@id/filters"-->
+<!--            app:popUpToInclusive="true" />-->
+<!--    </fragment>-->
+
+
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.productZoom.ProductZoom"
+        android:label="Filters"
+        android:id="@+id/productZoom"
+        tools:layout="@layout/product_zoom">
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.customDesign.CustomDesign"
+        android:label="CustomDesign"
+        android:id="@+id/customDesign"
+        tools:layout="@layout/custom_design">
+        <action
+            android:id="@+id/action_customDesign_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+           />
+
+        <action
+            android:id="@+id/action_customDesign_to_thankyou"
+            app:destination="@id/thankyou"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.selectFranchise.SelectFranchise"
+        android:label="SelectFranchise"
+        android:id="@+id/selectFranchise"
+        tools:layout="@layout/select_franchise">
+        <action
+            android:id="@+id/action_selectFranchise_to_thankyou"
+            app:destination="@id/thankyou"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true"
+        />
+
+        <action
+            android:id="@+id/action_selectFranchise_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.orderDetail.OrderDetail"
+        android:label="OrderDetail"
+        android:id="@+id/orderDetail"
+        tools:layout="@layout/order_detail">
+        <action
+            android:id="@+id/action_orderDetail_to_productDetail"
+            app:destination="@id/productDetail"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_orderDetail_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true" />
+
+        <action
+            android:id="@+id/action_orderDetail_to_createNew"
+            app:destination="@id/createNew"
+            app:launchSingleTop="true" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.thankYou.ThankYou"
+        android:label="ThankYou"
+        android:id="@+id/thankyou"
+        tools:layout="@layout/thankyou">
+
+        <action
+            android:id="@+id/action_thankyou_to_home"
+            app:destination="@id/home"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.nearestFranchise.NearestFranchise"
+        android:label="NearestFranchise"
+        android:id="@+id/nearestFranchise"
+        tools:layout="@layout/nearest_franchise">
+        <action
+            android:id="@+id/action_nearestFranchise_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true" />
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.searchOrder.SearchOrder"
+        android:label="SearchOrder"
+        android:id="@+id/searchOrder"
+        tools:layout="@layout/search_order">
+        <action
+            android:id="@+id/action_searchOrder_to_orderDetail"
+            app:destination="@id/orderDetail"
+            app:launchSingleTop="true" />
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.payment.Payment"
+        android:label="Payment"
+        android:id="@+id/payment"
+        tools:layout="@layout/payment">
+        <action
+            android:id="@+id/action_payment_to_thankyou"
+            app:destination="@id/thankyou"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_bar"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.complaintsFeedback.createNew.CreateNew"
+        android:label="CreateNew"
+        android:id="@+id/createNew"
+        tools:layout="@layout/create_new">
+        <action
+            android:id="@+id/action_createNew_to_history"
+            app:destination="@id/history"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/createNew"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.complaintsFeedback.history.History"
+        android:label="History"
+        android:id="@+id/history"
+        tools:layout="@layout/history">
+        <action
+            android:id="@+id/action_history_to_createNew"
+            app:destination="@id/createNew"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_history_to_cart"
+            app:destination="@id/cart"
+            app:launchSingleTop="true"
+            />
+        <action
+            android:id="@+id/action_history_to_historyDetail"
+            app:destination="@id/historyDetail"
+            app:launchSingleTop="true"
+            />
+
+        <action
+            android:id="@+id/action_history_to_historyFeedbackDetail"
+            app:destination="@id/historyFeedbackDetail"
+            app:launchSingleTop="true"
+            />
+    </fragment>
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.complaintsFeedback.historyDetail.HistoryDetail"
+        android:label="HistoryDetail"
+        android:id="@+id/historyDetail"
+        tools:layout="@layout/history_detail">
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.complaintsFeedback.historyFeedbackDetail.HistoryFeedbackDetail"
+        android:label="HistoryFeedbackDetail"
+        android:id="@+id/historyFeedbackDetail"
+        tools:layout="@layout/history_feedback_detail">
+    </fragment>
+
+
+    <fragment
+        android:name="com.klifora.shop.ui.main.webPage.WebPage"
+        android:label="WebPage"
+        android:id="@+id/webPage"
+        tools:layout="@layout/webpage">
+    </fragment>
+
+
+</navigation>

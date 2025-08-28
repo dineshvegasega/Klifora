@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textSortBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filters"
+        android:textColor="@color/_2A3740"
+        android:textSize="@dimen/_8sdp"
+        app:fontFamily="@font/nunitosans_light"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingVertical="@dimen/_10sdp"
+        tools:ignore="HardcodedText" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivIconCross"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_margin="@dimen/_5sdp"
+        app:layout_constraintDimensionRatio="H,1:1.1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_close_24"
+        android:padding="@dimen/_4sdp"
+        />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/_D9D9D9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textSortBy"
+        >
+    </View>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/centerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        android:orientation="horizontal"
+        >
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.2"
+            android:background="@color/_D9D9D9"
+            android:paddingVertical="@dimen/_10sdp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_7sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingVertical="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_10sdp"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/categories"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_7sdp"
+                app:fontFamily="@font/nunitosans_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingVertical="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_10sdp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/material"
+                android:textColor="@color/_000000"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/nunitosans_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingVertical="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textShopFor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shop_for"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_7sdp"
+                app:fontFamily="@font/nunitosans_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingVertical="@dimen/_5sdp"
+                tools:ignore="HardcodedText"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/_10sdp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.8"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvList2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="5"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_filter"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/_D9D9D9"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintBottom_toTopOf="@+id/filterLayout">
+    </View>
+
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="horizontal"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutClear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/menu_top_round"
+            android:backgroundTint="@color/_D6DBDF"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/clear_all"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutApply"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginStart="1dp"
+            android:background="@drawable/menu_top_round"
+            android:backgroundTint="@color/app_color"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                android:gravity="center"
+                android:text="@string/apply_filters"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

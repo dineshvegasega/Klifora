@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/top_bar_back"
+        layout="@layout/top_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/orders"
+        android:textColor="@color/_2A3740"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_17sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        tools:ignore="HardcodedText"
+        android:layout_marginVertical="@dimen/_15sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/tabLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutCustomerOrders"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/tab_round_light_blue"
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:gravity="center">
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textCustomerOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:text="@string/customer_orders"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutOrderHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/tab_round_light_white"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textOrderHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13sdp"
+                android:gravity="center"
+                android:text="@string/order_history"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/rvList1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:spanCount="2"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_home_1"
+        app:layout_constraintTop_toBottomOf="@+id/tabLinearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="@dimen/_5sdp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

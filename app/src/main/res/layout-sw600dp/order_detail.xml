@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/top_bar_back"
+        layout="@layout/top_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order_details"
+        android:textColor="@color/_2A3740"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_back"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_12sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        tools:ignore="HardcodedText"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btComplainFeedback"
+        style="@style/PrimaryButtonBlue"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/complaints_feedback"
+        app:iconTint="@color/white"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/app_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_back"
+        app:cornerRadius="@dimen/_4sdp"
+        android:textSize="@dimen/_7sdp"
+        android:visibility="visible"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textOrderNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/order_no"
+        android:textColor="@color/_2A3740"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_13sdp"
+        app:fontFamily="@font/nunitosans_bold"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:visibility="gone"
+        />
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/textOrderNo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/filterLayout"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/upperLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp"
+
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutCustomer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:background="@drawable/bg_all_round_orders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitleCustomer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_details"
+                        android:textColor="@color/_2A3740"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/nunitosans_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTitleCustomer"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTitle1"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPurity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/contact"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textName"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/_484848"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPurity"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPurity12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="@string/email"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textMobile"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/_484848"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPurity12"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle3241"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order_date_time"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTitleCustomer"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="DD-MMM-YYYY"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTitle3241"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="HH:MM PM"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDate"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orders"
+                android:textColor="@color/_2A3740"
+                android:textSize="@dimen/_10sdp"
+                app:fontFamily="@font/nunitosans_bold"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCustomer"
+                tools:ignore="HardcodedText" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListCategory1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_skus"
+                android:paddingHorizontal="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textOrders"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_3sdp"
+                />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:background="@drawable/bg_all_round_orders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvListCategory1"
+                android:visibility="gone"
+                >
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPaymentMethod"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Method"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_13sdp"
+                        app:fontFamily="@font/nunitosans_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle14235"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="By"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPaymentMethod"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textColorr42wr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Credit Card"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_11sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textTitle14235"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPurity4235435"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Name"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textColorr42wr"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textRingSizerwett"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Ram Kumar Sharma"
+                        android:textColor="@color/_484848"
+                        android:textSize="@dimen/_11sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPurity4235435"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPurity12rwetet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="Card Number"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textRingSizerwett"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textRingSize324ertr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:text="XXX XXXX XXX"
+                        android:textColor="@color/_484848"
+                        android:textSize="@dimen/_11sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPurity12rwetet"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        tools:ignore="HardcodedText" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPriceBreakup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:layout_marginVertical="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:background="@drawable/bg_all_round_orders"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPayment"
+                >
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textPriceBreakup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/price_breakup"
+                        android:textColor="@color/_2A3740"
+                        android:textSize="@dimen/_10sdp"
+                        app:fontFamily="@font/nunitosans_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textSubTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sub_total"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPriceBreakup"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textSubTotalPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textPriceBreakup"
+                        tools:ignore="HardcodedText" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/discount"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_9sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textSubTotal"
+                        tools:ignore="HardcodedText"
+                        android:visibility="gone"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textDiscountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textSubTotal"
+                        tools:ignore="HardcodedText"
+                        android:visibility="gone"/>
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textGST"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gst"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDiscount"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textGSTPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDiscount"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textShipping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shipping Amount"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textGSTPrice"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textShippingPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_semibold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textGSTPrice"
+                        tools:ignore="HardcodedText" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTotalAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_amount"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_bold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textShipping"
+                        tools:ignore="HardcodedText" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTotalAmountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/_141414"
+                        android:textSize="@dimen/_7sdp"
+                        app:fontFamily="@font/nunitosans_bold"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textShipping"
+                        tools:ignore="HardcodedText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPriceBreakup"
+                tools:ignore="MissingConstraints"
+                app:fontFamily="@font/nunitosans_bold"
+                android:text="@string/track_order"
+                android:textSize="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                />
+
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutStatus"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle0"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle11"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/pending"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/work_in_progress"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+
+
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/qc_photography"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/qc_certification"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/qc_packaging"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/dispatch"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.95"
+                    >
+                    <com.github.vipulasri.timelineview.TimelineView
+                        android:id="@+id/timeline7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        app:markerSize="@dimen/_8sdp"
+                        app:lineWidth="@dimen/_1sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        app:startLineColor="@color/_C4C4C4"
+                        app:marker="@drawable/ellipse_grey"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:endLineColor="@color/_C4C4C4"
+                        app:lineStyle="dash"
+                        />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/textTitle7"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        app:fontFamily="@font/nunitosans_regular"
+                        android:lines="2"
+                        android:text="@string/delivered"
+                        android:textSize="@dimen/_8sdp"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/filterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layoutSort"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/menu_top_round"
+            android:backgroundTint="@color/app_color"
+            android:gravity="center">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp"
+                android:gravity="center"
+                android:text="@string/add_to_cart"
+                app:fontFamily="@font/nunitosans_semibold"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

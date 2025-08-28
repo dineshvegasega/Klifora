@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70242551309",
+    "project_id": "klifora-app",
+    "storage_bucket": "klifora-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70242551309:android:29385dd9ff356bfaa13744",
+        "android_client_info": {
+          "package_name": "com.klifora.shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI0e4yJMguOB9mq9CyvAE93Yi606XUXQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

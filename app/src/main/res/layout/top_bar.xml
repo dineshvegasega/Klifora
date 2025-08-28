@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:paddingVertical="@dimen/_5sdp"
+    >
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/logoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+
+        >
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/_15sdp"
+        >
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/appicon"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:theme="@style/RoundCorner10"
+            android:src="@drawable/klifora_logo1"
+            android:scaleType="fitXY"
+            android:text="@string/app_name"
+            android:visibility="visible"
+            app:rippleColor="@color/black"
+            />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/ivSearch"
+        style="@style/PrimaryEditText_Transparent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:clickable="true"
+        android:drawableEnd="@drawable/search"
+        android:drawableTint="@color/_2A3740"
+        android:ellipsize="end"
+        android:focusable="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:hint="@string/type_here_to_search"
+        android:imeOptions="actionSearch"
+        android:inputType="text|textNoSuggestions"
+        android:lines="1"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/type_here_to_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoLayout"
+        app:rippleColor="@color/white"
+        tools:ignore="TextSizeCheck" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ivCartLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_11sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCart"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/cart"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            app:rippleColor="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menu_badge"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:text="0"
+            android:ems="10"
+            android:minEms="11"
+            android:singleLine="true"
+            android:gravity="center"
+            android:maxLength="4"
+            android:background="@drawable/bg_all_round_orders"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunitosans_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"
+            android:textSize="@dimen/_8sdp"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

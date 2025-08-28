@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:background="@color/_00000000"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top_round_corner"
+        android:orientation="vertical"
+        android:backgroundTint="@color/white"
+        android:paddingBottom="@dimen/_17sdp"
+        >
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_top_round_corner"
+            android:backgroundTint="@color/_D9D9D9"
+            android:paddingVertical="@dimen/_15sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textSortBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 23344"
+                android:textColor="@color/_000000"
+                android:textSize="@dimen/_12sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:paddingVertical="@dimen/_3sdp"
+                tools:ignore="HardcodedText"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIconCross"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                app:layout_constraintDimensionRatio="H,1:1.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/baseline_close_24"
+                android:padding="@dimen/_2sdp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Size"
+            android:textColor="@color/_000000"
+            android:textSize="@dimen/_10sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintTop_toBottomOf="@+id/layout11"
+            android:paddingVertical="@dimen/_3sdp"
+            tools:ignore="HardcodedText" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:nestedScrollingEnabled="false"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/_4sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/textSize"
+            app:spanCount="4"
+            tools:itemCount="12"
+            tools:listitem="@layout/item_size" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

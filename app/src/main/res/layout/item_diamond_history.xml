@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/layoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textClarity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Clarity"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:textSize="@dimen/_9sdp"
+                    tools:ignore="HardcodedText"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    android:lines="1"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_424041"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Weight (Carat)"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:textSize="@dimen/_9sdp"
+                    tools:ignore="HardcodedText"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:lines="2"
+                    android:layout_weight="0.95"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_424041"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textShape"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Shape"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:textSize="@dimen/_9sdp"
+                    android:lines="2"
+                    tools:ignore="HardcodedText"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.05"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_424041"
+                    >
+                </View>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Color"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:textSize="@dimen/_9sdp"
+                    android:lines="2"
+                    tools:ignore="HardcodedText"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.1"
+                    />
+
+                <View
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                    android:background="@color/_424041"
+                    >
+                </View>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textNumbers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Number (Pieces)"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="@dimen/_2sdp"
+                    android:textSize="@dimen/_9sdp"
+                    android:lines="2"
+                    tools:ignore="HardcodedText"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.9"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutMain"
+            android:background="@color/_c9cdd0"
+            >
+        </View>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

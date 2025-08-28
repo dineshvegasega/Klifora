@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/item_search"
+        android:orderInCategory="100"
+        android:title="Search"
+        android:icon="@drawable/baseline_search_24"
+        android:capitalize="none"
+        app:showAsAction="always"
+        />
+
+
+    <item
+        android:id="@+id/item_cart_badge"
+        android:orderInCategory="100"
+        android:title="Cart"
+        android:icon="@drawable/ic_shopping_cart_white_18dp"
+        android:capitalize="none"
+        app:showAsAction="always"
+        android:actionLayout="@layout/menu_action_friend_request_badge"
+        />
+
+</menu>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layoutMap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/top_bar_back"
+        layout="@layout/top_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar_back"/>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mapinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_all_round_franchise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:layout_margin="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_7sdp"
+        android:paddingVertical="@dimen/_7sdp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivIcon"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@color/_FFFCF6"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@color/_FFFCF6"
+            app:layout_constraintDimensionRatio="H,1:1.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/place_image"
+            android:theme="@style/RoundCorner5"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rama Jewellers"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            app:fontFamily="@font/nunitosans_bold"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textAddr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Jaipur, Rajasthan"
+            android:textColor="@color/_484848"
+            android:textSize="@dimen/_8sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            android:layout_marginTop="@dimen/_3sdp"
+            tools:ignore="HardcodedText" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textPincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Pincode - 21566324"
+            android:textColor="@color/_484848"
+            android:textSize="@dimen/_8sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textAddr"
+            android:layout_marginTop="@dimen/_3sdp"
+            tools:ignore="HardcodedText" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="Contact - 84652345620 "
+            android:textColor="@color/_484848"
+            android:textSize="@dimen/_8sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintStart_toEndOf="@+id/ivIcon"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/textPincode"
+            android:layout_marginTop="@dimen/_3sdp"
+            tools:ignore="HardcodedText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

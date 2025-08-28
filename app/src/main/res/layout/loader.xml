@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/filterLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_all_round_orders"
+        android:paddingHorizontal="@dimen/_40sdp"
+        android:paddingVertical="@dimen/_28sdp"
+        android:gravity="center_horizontal"
+        tools:ignore="MissingConstraints">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/app_color"
+            style="?android:attr/progressBarStyleInverse"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textColor="@color/_2A3740"
+            app:layout_constraintTop_toBottomOf="@+id/top_bar_back"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_14sdp"
+            app:fontFamily="@font/nunitosans_semibold"
+            tools:ignore="HardcodedText"
+            android:layout_marginTop="@dimen/_5sdp"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

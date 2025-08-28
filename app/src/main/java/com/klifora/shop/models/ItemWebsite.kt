@@ -1,0 +1,32 @@
+package com.klifora.shop.models
+
+data class ItemWebsite(
+    val billing_city: String,
+    val billing_company: String,
+    val billing_country_id: String,
+    val billing_fax: String,
+    val billing_firstname: String,
+    val billing_full: String,
+    val billing_lastname: String,
+    val billing_postcode: String,
+    val billing_region: String,
+    val billing_region_id: String,
+    val billing_street: String,
+    val billing_telephone: String,
+    val billing_vat_id: String,
+    val confirmation: String,
+    val created_at: String,
+    val created_in: String,
+    val dob: String,
+    val email: String,
+    val entity_id: String,
+    val gender: String,
+    val group_id: String,
+    val lock_expires: String,
+    val mobile_number: String,
+    val name: String,
+    val shipping_full: String,
+    val status: String,
+    val taxvat: String,
+    val website_id: String
+)

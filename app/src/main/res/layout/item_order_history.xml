@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_marginHorizontal="@dimen/_6sdp"
+        android:background="@drawable/bg_all_round_orders"
+        >
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/order_no"
+                android:textColor="@color/_141414"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textOrderNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="123546523"
+                android:textColor="@color/_141414"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/nunitosans_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textTitle"
+                android:layout_marginTop="@dimen/_3sdp"
+                tools:ignore="HardcodedText" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textPurity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@string/order_price"
+                android:textColor="@color/_141414"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textOrderNo"
+                android:layout_marginTop="@dimen/_3sdp"
+                tools:ignore="HardcodedText" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textOrderPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="₹1234523.00"
+                android:textColor="@color/_484848"
+                android:textSize="@dimen/_11sdp"
+                app:fontFamily="@font/nunitosans_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textPurity"
+                android:layout_marginTop="@dimen/_3sdp"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btDate"
+                style="@style/PrimaryButtonBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_24sdp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="01-Aug-2023"
+                android:textColor="@color/_2A3740"
+                android:backgroundTint="@color/_D6DBDF"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btStatus"
+                style="@style/PrimaryButtonBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_24sdp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/inprogress"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/_E87103"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btDate"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+
+
+

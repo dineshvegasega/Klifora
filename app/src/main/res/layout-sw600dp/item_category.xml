@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_1sdp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:focusable="true"
+        android:clickable="true"
+        android:paddingVertical="@dimen/_3sdp"
+    >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/category_parent"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            android:gravity="center_vertical|start"
+            android:layout_marginHorizontal="@dimen/_8sdp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ring"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9sdp"
+                app:fontFamily="@font/nunitosans_semibold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:drawableEnd="@drawable/arrow_right"
+                android:drawablePadding="@dimen/_3sdp"
+                android:drawableTint="@color/white"
+                tools:ignore="HardcodedText" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListCategory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:nestedScrollingEnabled="false"
+        app:spanCount="2"
+        tools:itemCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_child"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_3sdp"
+android:layout_marginHorizontal="@dimen/_4sdp"
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

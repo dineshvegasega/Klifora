@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_all_round_franchise"
+    android:paddingHorizontal="@dimen/_7sdp"
+    android:paddingVertical="@dimen/_7sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@color/_FFFCF6"
+        android:scaleType="centerCrop"
+        android:backgroundTint="@color/_FFFCF6"
+        app:layout_constraintDimensionRatio="H,1:1.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/place_image" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textColor="@color/_2A3740"
+        android:textSize="@dimen/_10sdp"
+        app:fontFamily="@font/nunitosans_bold"
+        app:layout_constraintStart_toEndOf="@+id/ivIcon"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textAddr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Jaipur, Rajasthan"
+        android:textColor="@color/_484848"
+        android:textSize="@dimen/_8sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintStart_toEndOf="@+id/ivIcon"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        android:layout_marginTop="@dimen/_3sdp"
+        tools:ignore="HardcodedText" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textPincode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Pincode - 21566324"
+        android:textColor="@color/_484848"
+        android:textSize="@dimen/_8sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintStart_toEndOf="@+id/ivIcon"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textAddr"
+        android:layout_marginTop="@dimen/_3sdp"
+        tools:ignore="HardcodedText" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Contact - 84652345620 "
+        android:textColor="@color/_484848"
+        android:textSize="@dimen/_8sdp"
+        app:fontFamily="@font/nunitosans_semibold"
+        app:layout_constraintStart_toEndOf="@+id/ivIcon"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/textPincode"
+        android:layout_marginTop="@dimen/_3sdp"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+

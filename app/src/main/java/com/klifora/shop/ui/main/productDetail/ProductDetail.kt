@@ -2209,7 +2209,7 @@ class ProductDetail : Fragment(), CallBackListener {
                         textWeight2.text = "" + totalWe.round()+ " gram"
 //                        textWeight2.text = "" + totalWe.round()+ " gram"
 
-                        itemProduct.custom_attributes.forEach { itemProductAttr ->
+                        itemProductThis.custom_attributes.forEach { itemProductAttr ->
 //                            Log.e("TAG", "idsids " + "filteredNotAA")
                             if (itemProductAttr.attribute_code == "short_description") {
                                 isWebview = 1
@@ -2283,12 +2283,15 @@ class ProductDetail : Fragment(), CallBackListener {
 
 
                             if (itemProductAttr.attribute_code == "totel_making_charge") {
+//                                textMakingChargesPrice.text = "₹ " + getPatternFormat(
+//                                    "1",
+//                                    itemProductAttr.value.toString().toDouble() * goldWeight
+//                                )
                                 textMakingChargesPrice.text = "₹ " + getPatternFormat(
                                     "1",
-                                    itemProductAttr.value.toString().toDouble() * goldWeight
+                                    itemProductAttr.value.toString().toDouble()
                                 )
                             }
-
 
                         }
 

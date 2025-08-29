@@ -1140,12 +1140,32 @@ class ProductDetail : Fragment(), CallBackListener {
                             put("cartItem", json)
                         }
                         readData(CUSTOMER_TOKEN) { token ->
-                            viewModel.addCart(token!!, jsonCartItem) {
-                                //cartMutableList.value = true
-                                Log.e("TAG", "onCallBack: ${this.toString()}")
-                                showSnackBar(getString(R.string.item_added_to_cart))
-                                MainActivity.mainActivity.get()!!.callCartApi()
+                            viewModel.getCart(token!!) {
+                                val itemCart = this
+                                Log.e("TAG", "getCart " + this.toString())
+
+                                var isAdded = false
+                                itemCart.items.forEach {
+                                    if (it.sku == currentSku){
+                                        isAdded = true
+                                    } else {
+                                        isAdded = false
+                                    }
+                                }
+
+                                if(isAdded){
+                                    findNavController().navigate(R.id.action_productDetail_to_cart)
+                                } else {
+                                    viewModel.addCart(token!!, jsonCartItem) {
+                                        //cartMutableList.value = true
+                                        Log.e("TAG", "onCallBack: ${this.toString()}")
+                                        showSnackBar(getString(R.string.item_added_to_cart))
+                                        findNavController().navigate(R.id.action_productDetail_to_cart)
+                                    }
+                                }
+
                             }
+
                         }
                     }
                 }
@@ -1285,12 +1305,32 @@ class ProductDetail : Fragment(), CallBackListener {
                             put("cartItem", json)
                         }
                         readData(CUSTOMER_TOKEN) { token ->
-                            viewModel.addCart(token!!, jsonCartItem) {
-                                //cartMutableList.value = true
-                                Log.e("TAG", "onCallBack: ${this.toString()}")
-                                showSnackBar(getString(R.string.item_added_to_cart))
-                                findNavController().navigate(R.id.action_productDetail_to_cart)
+                            viewModel.getCart(token!!) {
+                                val itemCart = this
+                                Log.e("TAG", "getCart " + this.toString())
+
+                                var isAdded = false
+                                itemCart.items.forEach {
+                                  if (it.sku == currentSku){
+                                      isAdded = true
+                                  } else {
+                                      isAdded = false
+                                  }
+                                }
+
+                                if(isAdded){
+                                    findNavController().navigate(R.id.action_productDetail_to_cart)
+                                } else {
+                                    viewModel.addCart(token!!, jsonCartItem) {
+                                        //cartMutableList.value = true
+                                        Log.e("TAG", "onCallBack: ${this.toString()}")
+                                        showSnackBar(getString(R.string.item_added_to_cart))
+                                        findNavController().navigate(R.id.action_productDetail_to_cart)
+                                    }
+                                }
+
                             }
+
                         }
                     }
                 }
@@ -1299,7 +1339,7 @@ class ProductDetail : Fragment(), CallBackListener {
 
 
 
-            layoutDescription.singleClick {
+            layoutDescription.setOnClickListener {
                 if (layoutProductDetails.isVisible == true) {
                     layoutProductDetails.visibility = View.GONE
                     ivHideShow.setImageDrawable(
@@ -1319,7 +1359,8 @@ class ProductDetail : Fragment(), CallBackListener {
                 }
             }
 
-            layoutDiamondAndGemstones.singleClick {
+
+            layoutDiamondAndGemstones.setOnClickListener {
                 if (layoutWD.isVisible == true) {
                     layoutWD.visibility = View.GONE
                     if (isWebview == 1){
@@ -1353,7 +1394,7 @@ class ProductDetail : Fragment(), CallBackListener {
             }
 
 
-            layoutPriceBreakup.singleClick {
+            layoutPriceBreakup.setOnClickListener {
                 if (groupPriceBreakup.isVisible == true) {
                     groupPriceBreakup.visibility = View.GONE
                     ivHideShow3.setImageDrawable(
@@ -1870,7 +1911,7 @@ class ProductDetail : Fragment(), CallBackListener {
 
                         else {
                             idDataNotFound!!.root.visibility = View.VISIBLE
-                            idDataNotFound!!.textDesc.text = "Product type is not correct!"
+                            idDataNotFound!!.textDesc.text = requireContext().getString(R.string.product_type_is_not_correct)
 
                             nestedScrollView!!.visibility = View.GONE
                             filterLayout.visibility = View.GONE
@@ -1991,7 +2032,76 @@ class ProductDetail : Fragment(), CallBackListener {
 //                                    itemProductAttr.value.toString().toDouble()
 //                                )
 //                            }
+
+
+
+                            if (itemProductAttr.attribute_code == "short_description") {
+                                isWebview = 1
+//                                Log.e("TAG", "idsids " + "filteredNotBB")
+                                binding.webView.loadDataWithBaseURL(
+                                    null,
+                                    "" + itemProductAttr.value,
+                                    "text/html",
+                                    "utf-8",
+                                    null
+                                )
+
+                                layoutDiamondAndGemstones.visibility = View.VISIBLE
+                            }
+
+
+                            if (itemProductAttr.attribute_code == "dynamic_row_attribute") {
+                                println("isWebview "+isWebview)
+                                isWebview = 2
+                                val diamondItemArray : ArrayList<DiamondItem> = ArrayList()
+
+                                val diamondItem = DiamondItem(
+                                    "",
+                                    "Clarity",
+                                    "Weight (Carat)",
+                                    "Shape",
+                                    "Color",
+                                    "Number (Pieces)"
+                                )
+                                diamondItemArray.add(diamondItem)
+
+                                try {
+                                    val jsonString = itemProductAttr.value.toString().replace("\\", "")
+//                                    Log.e("TAG", "jsonString "+jsonString)
+                                    val jsonArr = JSONArray(jsonString)
+                                    for (i in 0..<jsonArr.length()) {
+                                        val jsonObj = jsonArr.getJSONObject(i)
+//                                        Log.e("TAG", "jsonObj "+jsonObj)
+                                        val diamondItem = DiamondItem(
+                                            jsonObj.getString("record_id"),
+                                            jsonObj.getString("diamond_clarity"),
+                                            jsonObj.getString("diamond_weight"),
+                                            jsonObj.getString("diamond_shape"),
+                                            jsonObj.getString("diamond_color"),
+                                            jsonObj.getString("diamond_number"),
+                                        )
+                                        diamondItemArray.add(diamondItem)
+                                        println(jsonObj)
+                                    }
+
+//                                    println("AAAAAAAAA "+diamondItemArray.size)
+                                }catch (e : Exception){
+//                                    println("BBBBBBBB "+diamondItemArray.size)
+                                    Log.e("TAG", "errerr "+e.message)
+                                }
+
+
+                                recyclerView!!.setHasFixedSize(true)
+                                binding.recyclerView!!.adapter = viewModel.diamondAdapter
+                                viewModel.diamondAdapter.notifyDataSetChanged()
+                                viewModel.diamondAdapter.submitList(diamondItemArray)
+
+
+                                layoutDiamondAndGemstones.visibility = View.VISIBLE
+                            }
                         }
+
+
 
 
                         var totalWe : Double = 0.0
@@ -2298,6 +2408,8 @@ class ProductDetail : Fragment(), CallBackListener {
 
 
                         itemProduct.extension_attributes.configurable_product_options.forEach { itemConfigurableProductAttr ->
+
+
 
 
                             if (itemConfigurableProductAttr.label == "Size") {

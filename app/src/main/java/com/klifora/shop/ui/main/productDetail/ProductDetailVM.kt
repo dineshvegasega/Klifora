@@ -38,6 +38,7 @@ import com.klifora.shop.datastore.db.CartModel
 import com.klifora.shop.genericAdapter.GenericAdapter
 import com.klifora.shop.models.ItemRelatedProducts
 import com.klifora.shop.models.ItemRelatedProductsItem
+import com.klifora.shop.models.cart.ItemCart
 import com.klifora.shop.models.cart.ItemCartModel
 import com.klifora.shop.models.options.ItemOptions
 import com.klifora.shop.models.products.ItemProduct
@@ -255,6 +256,51 @@ class ProductDetailVM @Inject constructor(private val repository: Repository) : 
 
 
 
+    fun getCart(customerToken: String, callBack: ItemCart.() -> Unit) =
+        viewModelScope.launch {
+            repository.callApi(
+                callHandler = object : CallHandler<Response<ItemCart>> {
+                    override suspend fun sendRequest(apiInterface: ApiInterface) =
+//                        if (loginType == "vendor") {
+                        apiInterface.getCart("Bearer " +customerToken, storeWebUrl)
+                    //                        } else if (loginType == "guest") {
+//                        apiInterface.getQuoteId("Bearer " +adminToken, emptyMap)
+                    //                        } else {
+//                            apiInterface.products("Bearer " +adminToken, storeWebUrl, emptyMap)
+//                        }
+                    @SuppressLint("SuspiciousIndentation")
+                    override fun success(response: Response<ItemCart>) {
+                        if (response.isSuccessful) {
+                            try {
+                                Log.e("TAG", "successAAXX: ${response.body().toString()}")
+                                callBack(response.body()!!)
+                            } catch (_: Exception) {
+                            }
+                        }
+                    }
+
+                    override fun error(message: String) {
+//                        if(message.contains("fieldName")){
+//                            showSnackBar("Something went wrong!")
+//                        } else {
+//                            sessionExpired()
+//                        }
+
+                        if(message.contains("%fieldValue")){
+//                            sessionExpired()
+                        } else if(message.contains("authorized")){
+                            sessionExpired()
+                        } else {
+//                            showSnackBar("Something went wrong!")
+                        }
+                    }
+
+                    override fun loading() {
+                        super.loading()
+                    }
+                }
+            )
+        }
 
 
     fun getProductDetail(adminToken: String, skuId: String, callBack: ItemProduct.() -> Unit) =

@@ -144,6 +144,7 @@
                 android:layout_marginHorizontal="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Category: Rings"
+                android:visibility="invisible"
                 android:textColor="@color/_383838"
                 android:textSize="@dimen/_10sdp"
                 app:fontFamily="@font/nunitosans_semibold"
